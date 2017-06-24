@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=UTF-8">
+    <title>RESUME</title>
+    <link href="CSS/resume.css" rel="stylesheet" type="text/css">
+    <style>
+        #main {
+            z-index: 1;
+            position: fixed;
+            width: 97.5%;
+            margin-top: -20px;
+            height: 60px;
+            background-color: #e7fff5;
+            margin-bottom: 10px;
+        }
+
+        #my {
+            float:left;
+            margin-left: 5px;
+            padding-top: 5px;
+            font-size: 16px;
+            color: black;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: 5px;
+            padding-top: 5px;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: inline-block;
+            padding: 8px;
+        }
+
+        .ref {
+            background-color: #dddddd;
+            float:right;
+            display: flex;
+            align-items: right;
+        }
+        .ref ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            list-style: none;
+        }
+        .ref li {
+            padding: 20px;
+            margin-left: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        #nav {
+            position: relative;
+            float: left;
+            width: 20%;
+            height: 830px;
+            margin-top: 70px;
+            margin-bottom: 10px;
+        }
+        #nav_wrapper {
+            background-color: #c8fffe;
+            width: 100%;
+            margin: 0px auto;
+            text-align: left;
+            z-index: 1;
+            display: block;
+            padding: 8px;
+        }
+        #nav ul {
+            margin: 0px;
+            padding: 0px;
+        }
+        #nav ul li {
+            display: block;
+
+        }
+        #nav ul li:hover {
+            background-color: transparent;
+            width: 219px;
+
+        }
+        #nav ul a,visited {
+            color: mediumvioletred;
+            padding: 20px;
+            text-decoration: none;
+            display: block;
+        }
+        #nav ul a:hover {
+            color: black;
+            display: block;
+        }
+        #nav ul li:hover ul {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #nav ul ul {
+            display: none;
+            position: absolute;
+        }
+        #nav ul ul li {
+            display: flex;
+            padding: 25.5px;
+            background-color: transparent;
+        }
+
+        #nav ul ul li:hover {
+            color: transparent;
+            width: 168px;
+        }
+        #nav ul ul li,visited {
+            color: #9c5963;
+            margin: 0;
+            font-weight: bold;
+            padding: 20px;
+            margin-left: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        li:hover .sub_navi {
+            background: red;
+            border: #099 solid;
+            border-width: 1px;
+            display: block;
+            position: absolute;
+            left: 290px;
+            top: 100px;
+        }
+
+        #footer {
+            height: 40px;
+            width: 100%;
+            clear: both;
+            padding: 0px;
+            bottom: 0px;
+            margin-bottom: 1000px;
+        }
+        #footer p {
+            margin-top: 10px;
+            margin-left: 400px;
+        }
+</style>
+</head>
+<body>
+<div class="header">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/71/dd/ef/71ddef07c39fbac1e5c262222b6368fa.jpg" width="150" height="100" style="border: double"/>
+</div>
+<div id="main">
+    <p id="my">SAIJYOTHI GUDIBANDI</p>
+    <ul>
+        <li><a href="#">Gmail</a></li>
+        <li><a href="#">Github</a></li>
+    </ul>
+</div>
+<div class="ref">
+    <ul>
+        <li><a href="#">Education</a>
+        </li>
+        <li><a href="#">Skills</a>
+        </li>
+        <li><a href="#">Projects</a>
+        </li>
+    </ul>
+</div>
+<div id="nav">
+    <div id="nav_wrapper">
+        <ul>
+            <li><a href="#">Education</a>
+            </li>
+            <li><a href="#">Skills</a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/ankita-wankhede-673b2876/edit/project/59/">Projects</a>
+                <ol>
+                    <li>
+                        Bubble Game
+                    </li>
+                    <li>
+                        Twitter Analysis
+                    </li>
+                    <li>
+                        Hidden Hurdles
+                    </li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="footer">
+    <p>Address: 4913 Walnut street</p>
+    <p>Mobile:987654321</p>
+</div>
+</body>
+</html>

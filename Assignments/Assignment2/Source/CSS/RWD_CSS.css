@@ -1,0 +1,23 @@
+body{
+    background-color: #c8fffe;
+}
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    text-align: center;
+}
+.idiv{
+    margin: 5%;
+}
+.down{
+    display:inline;
+}
+.down1{
+    margin-outside: 2%;
+}
+.down2{
+    margin-outside: 2%;
+}
+.down3{
+    margin-outside: 2%;
+}
