@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url("http://lamcdn.net/lookatme.ru/post_image-image/0L5NRBCvgdOsMjIzPUndpg-article.jpg");
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        #login-dp{
+            min-width: 250px;
+            padding: 14px 14px 0;
+            overflow:hidden;
+            background-color:rgba(255,255,255,.8);
+        }
+        #login-dp .help-block{
+            font-size:12px
+        }
+        #login-dp .bottom{
+            background-color:rgba(255,255,255,.8);
+            border-top:1px solid #ddd;
+            clear:both;
+            padding:14px;
+        }
+        #login-dp .social-buttons{
+            margin:12px 0
+        }
+        #login-dp .social-buttons a{
+            width: 49%;
+        }
+        #login-dp .form-group {
+            margin-bottom: 10px;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>GitHub Search</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default" style=" background-color:#71cceb;margin-top: 1%">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">GitHub Search</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="index.html" >Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                            <li class="dropdown-header">Login via..</li>
+                            <a href="#"><i class="fa fa-facebook-square fa-3x" style="color:dodgerblue" aria-hidden="true"></i> </a>
+                            <a href="#"><i class="fa fa-google-plus-square fa-3x" style="color:#db4437" aria-hidden="true"></i> </a>
+                            <a href="#"><i class="fa fa-twitter-square fa-3x" style="color:#1da1f2" aria-hidden="true"></i> </a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">or</li>
+                            <form method="POST" action="home.html">
+                                <div class="form-group">
+                                    <li><input type="text" class="form-control" placeholder="Username" id="username" required></li>
+                                </div>
+                                <div class="form-group">
+                                    <li><input type="password" class="form-control" placeholder="Password" id="password" required>
+                                        <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                </div>
+                                <div class="form-group"><li><input type="submit" class="btn btn-warning" value="Login"></li></div>
+                                <li> New here ? <a href="reistration.html">Join Us</a></li>
+                            </form>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron" style="background: #c7ebe9">
+        <h1><i class="fa fa-github" aria-hidden="true"></i> GitHub</h1>
+        <p>GitHub is a version control Repository. The main purpose is coding. By using github username,one can easily identify you on github and they can see your repositories.</p>
+            <a class="btn btn-lg btn-primary" href="https://guides.github.com/activities/hello-world/" role="button">GitHub User Guide &raquo;</a>
+        </p>
+    </div>
+
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="reg.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

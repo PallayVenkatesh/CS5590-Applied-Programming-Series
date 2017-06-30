@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: url(https://camo.githubusercontent.com/7781f7adcf155e96728d1de069c7a78f46dbbcd2/687474703a2f2f7368616c6c6d656e746d6f2e6769746875622e696f2f696d616765732f6c696e652d646f742d6261636b67726f756e642e676966);
+            background-size:cover;
+            background-repeat:   no-repeat;
+            background-position: center center;
+        }
+        .user {
+            height: 400px;
+            width: 1000px;
+            padding: 20px;
+            border: 1px double #bebebe;
+            font-size: 1.4em;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>GitHub Search</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default" style=" background-color:#35a7eb; margin-top: 1%">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">GitHub UserName Search</a>
+            </div>
+            <div id="navbar" class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+
+
+    <h1><i class="fa fa-heart" aria-hidden="true" style="color:red"></i> Welcome...</h1>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-9">
+                    <input type="text" placeholder="GitHub UserName" class="form-control" id="searchbox">
+                </div>
+                <div class="col-md-3">
+                    <button onclick="myfunction()" class="searchbutton" style="padding: 1% 2%">
+                        Search
+                    </button>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h4><i class="fa fa-github-alt" aria-hidden="true"></i> Here are your user details of the GitHub User:</h4>
+                    <table class="table table-bordered table-striped" id="data">
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="reg.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

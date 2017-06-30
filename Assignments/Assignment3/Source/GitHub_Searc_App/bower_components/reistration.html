@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-size:cover;                      /* <------ */
+            background-repeat:   no-repeat;
+            background-position: center center;              /* optional, center the image */
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
+</head>
+<body background="https://camo.githubusercontent.com/999cff82d4bea54f222e165d647b5df597f45b86/687474703a2f2f692e696d6775722e636f6d2f33624d473655372e706e67">
+<div class="container">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default" style=" background-color:#71cceb;margin:1%">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://localhost:63342/Assignment3/index.html">Registration</a>
+            </div>
+            <div id="navbar" class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+
+
+    <h1><i class="fa fa-registered" aria-hidden="true"></i>User Registration</h1>
+    <table class="table">
+        <tr>
+            <td>First Name</td>
+            <td><input class="form-control" placeholder="John" id="firstName"></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input class="form-control" placeholder="Doe" id="lastName"></td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td><div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Phone Number</td>
+            <td><input class="form-control" placeholder="408-000-0000" id="phoneNumber"></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><textarea rows="3" cols="15" class="form-control" placeholder="Address" id="address"></textarea></td>
+        </tr>
+        <tr>
+            <br><td colspan="2" align="center"><button class="btn btn-primary">Register</button></td>
+        </tr>
+    </table>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
+</body>
+</html>
