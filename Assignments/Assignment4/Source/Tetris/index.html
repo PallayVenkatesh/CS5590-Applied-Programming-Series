@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>My Little Tetris</title>
+		<style>
+			html { background: lightskyblue; }
+			#board {
+				margin: 0 auto;
+				display: block;
+				border: 2px solid black;
+				border-bottom: 5px solid green;
+				background: white;
+			}
+			#lines {
+				display: block;
+				width: 240px;
+				margin: 0 auto;
+				margin-top: 2em;
+				color: #444;
+				font-size: 1.5em;
+			}
+		</style>
+	</head>
+	<body background="https://bulk2.destructoid.com/ul/210123-Tetris.jpg" style="background-repeat: no-repeat; background: cover">
+		<span id="lines">Tetris Game</span>
+		<canvas id="board">
+		</canvas>
+		<footer align="center" style="margin-top: 2%">
+			<button class="exit">Exit</button>
+			<button class="pause">pause</button>
+			<button class="reset">reset</button>
+		</footer>
+		<script src="tetrominoes.js"></script>
+		<script src="tetris.js"></script>
+	</body>
+</html>
