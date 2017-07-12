@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="" >
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css">
+    <link rel="stylesheet" href="Home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWhSE1HAi753_M8rcFTfcbBXUQInf8y6c&v=3.exp&sensor=true&amp;libraries=places"></script>
+    <script src="Home.js" type="text/javascript"></script>
+</head>
+
+<body class="main" background="http://www.fullcompass.com/common/products/original/168805.jpg">
+
+<nav class="navbar navbar-light bg-faded">
+    <h2 class="navbar-brand m-b-0">Location-Weather Application</h2>
+
+</nav>
+<div class="geo" data-ng-app="geolocation" ng-controller="googlemapoutput">
+    <form>
+        <div class="form-group">
+
+                <input class="form-control mb-2 mr-sm-2 mb-sm-0" id="startLocation" type="text">
+            </div>
+        <input class="form-control mb-2 mr-sm-2 mb-sm-0" id="endLocation" type="text">
+        <span class="btn btn-primary" type="submit" ng-click="calcRoute()" style="margin:1%">
+                <button class="btn btn-primary"
+                        ng-disabled="searchForm.$invalid">Search</button>
+            </span>
+
+    </form>
+</div>
+
+<div class="row">
+    <div class="col-md-6" id="map-canvas"></div>
+    <div  id="weather" class="col-md-2" style="background-image: url(http://www.weather.gov/images/phi/features/weather_symbols.png); background-size: cover">
+        <h6> Weather Report:</h6>
+
+
+    </div>
+
+</div>
+</body>
+</html>
