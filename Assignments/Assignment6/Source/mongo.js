@@ -1,106 +1,119 @@
+/**
+ * Created by chswa on 7/18/2017.
+ */
+
+
 var MongoClient = require('mongodb').MongoClient;
-var objectId = require('mongodb').ObjectID;
 var assert = require('assert');
 var bodyParser = require("body-parser");
 var express = require('express');
 var cors = require('cors');
 var app = express();
-var url = 'mongodb://ankita:1234@ds123381.mlab.com:23381/mydatabase';
+
+var url = 'mongodb://user1:user1@ds157702.mlab.com:57702/web_app';
+var ObjectID = require('mongodb').ObjectID;
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.post('/insert', function (req, res) {
+app.post('/create', function (req, res) {
     MongoClient.connect(url, function(err, db) {
         if(err)
         {
             res.write("Failed, Error while connecting to Database");
             res.end();
         }
-        insertDocument(db, req.body, function() {
-            res.write("Successfully inserted");
-            res.end();
-        });
+        else {
+            insertDocument(db, req.body, function () {
+                res.write("Successfully inserted");
+                res.end();
+            });
+        }
     });
-})
+});
+
 app.get('/get', function (req, res) {
-    MongoClient.connect(url, function (err, db) {
-        console.log(app.get('config'));
-        assert.equal(null, err);
-        db.collection('users').find().toArray(function(err, result) {
-            if (err) {
+    MongoClient.connect(url, function(err, db) {
+        if(err)
+        {
+            res.write("Failed, Error while connecting to Database");
+            res.end();
+        }
+
+        db.collection('students').find().toArray(function(err, result){
+            if(err)
+            {
                 res.write("get Failed");
                 res.end();
-            } else {
+            }else
+            {
 
                 res.send(JSON.stringify(result));
             }
-            console.log("Got All Documents " + JSON.stringify(result));
+            console.log("Got All Documents");
+
         });
     });
+
 });
 
-app.post('/update', function (req, res) {
-    var item = {
-        "fname": req.body.fname,
-        "lname": req.body.lname,
-        "email": req.body.email,
-        "password": req.body.password
-    }
-    MongoClient.connect(url, function(err, db) {
+app.get('/delete/:toBeDeleted_id', function (req, res) {
+
+    MongoClient.connect(url, function (err,db) {
+
         if(err)
         {
-            res.write("Failed, Error while connecting to Database");
+            res.write("Failed to delete, Error While connecting to database");
             res.end();
         }
-        var id = req.body._id;
-        db.collection('users').updateOne({"_id": objectId(id)},{'$set':item}, {
-                upsert: true
-            },
-            function(err,result){
+        else{
+            db.collection('students').find().toArray(function(err, result){
                 if(err)
-                    throw err;
-                else
-                    res.send("Update success !");
+                {
+                    res.write("get Failed");
+                    res.end();
+                }else
+                {
+
+                    res.send(JSON.stringify(result));
+                }
+                console.log("Got All Documents");
+
             });
+
+        }
+
     });
+
 });
 
-app.post('/delete', function (req, res) {
-    var id = req.body._id;
-    console.log(id);
-    MongoClient.connect(url, function(err, db) {
-        console.log("after connect");
-        if(err)
-        {
-            res.write("Failed, Error while connecting to Database");
-            res.end();
-        }
-        console.log(id);
-        db.collection('users').deleteOne({"_id": objectId(id)}, {
-                upsert: true
-            },
-            function(err,result){
-                if(err)
-                    throw err;
-                else
-                    res.send("Update success !");
-            });
-    });
+
+app.get('/update/:toBeUpdated_id', function (req, res) {
+    //3.connect to MongoDB. Handle the error and write the logic for updating the selected field
 });
+
+
 var insertDocument = function(db, data, callback) {
-    db.collection('users').insertOne( data, function(err, result) {
+    db.collection('students').insertOne( data, function(err, result) {
         if(err)
         {
             res.write("Registration Failed, Error While Registering");
             res.end();
         }
-        console.log("Inserted a document into the restaurants collection.");
+        else {
+        console.log("Inserted a document into the  students collection.");
         callback();
+        }
     });
+
 };
-var server = app.listen(8081, function () {
+
+var server = app.listen(10002, function () {
     var host = server.address().address;
     var port = server.address().port;
 
     console.log("Example app listening at http://%s:%s", host, port)
-})
+});
+
+
+

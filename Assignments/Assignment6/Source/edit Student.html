@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Edit</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body style="text-align: center;;background-size: cover;background-repeat: no-repeat" background="https://www.insidehighered.com/sites/default/server_files/styles/large-copy/public/media/screwy%20students.jpg?itok=ihrORrNl">
+
+<div style="height:30%;width:30%;background: white;margin-left:30%;margin-top:5%;padding: 5%;border-radius: 20%">
+
+<h2> Edit: </h2>
+
+<div data-ng-app="app" ng-controller="MainCtrl" ng-init="getData()">
+
+
+    <h4> All Student records </h4>
+
+    <table style="background-color:whitesmoke" border="double">
+        <thead>
+        <tr>
+            <th style="text-align: left"> First Name </th>
+            <th style="text-align: left"> Last Name </th>
+            <th style="text-align: left"> Email </th>
+            <th style="text-align: left"> Grade </th>
+            <th style="text-align: left"> Age </th>
+            <th style="text-align: left"> Address </th>
+            <th style="text-align: left"> phone Number</th>
+
+        </tr>
+        </thead>
+
+
+
+        <tbody ng-repeat="student in list">
+        <td>{{student.sfname}}</td>
+        <td> {{student.slname}}</td>
+        <td> {{student.semail}}</td>
+        <td> {{student.sgrade}}</td>
+        <td> {{student.sage}}</td>
+        <td> {{student.sadd}}</td>
+        <td> {{student.sphone}}</td>
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <p> Note! You can only edit your age , address and phone number</p>
+    <p>You don't have acess to delete records</p>
+
+
+    <label> Enter Student name to edit </label>
+    <input type="text" title="name" ng-model="vm.name">
+    <button data-ng-click="getData()"> Get Details  </button>
+    <br>
+    <br>
+    <p>Selected Student Details</p>
+    <table style="background-color:whitesmoke" border="double">
+        <thead>
+        <tr>
+            <th style="text-align: left"> First Name </th>
+            <th style="text-align: left"> Last Name </th>
+            <th style="text-align: left"> Email </th>
+            <th style="text-align: left"> Grade </th>
+            <th style="text-align: left"> Age </th>
+            <th style="text-align: left"> Address </th>
+            <th style="text-align: left"> phone Number</th>
+
+        </tr>
+        </thead>
+
+
+        <tbody >
+        <td>{{list1.sfname}}</td>
+        <td> {{list1.slname}}</td>
+        <td> {{list1.semail}}</td>
+        <td> {{list1.sgrade}}</td>
+        <td> {{list1.sage}}</td>
+        <td> {{list1.sadd}}</td>
+        <td> {{list1.sphone}}</td>
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <button  onclick=window.location.href="addstudents.html">Edit</button>
+    <a href="homepage.html"><button style="background-color: cornflowerblue"> <i class="fa fa-retweet" aria-hidden="true"></i>go to home! </button></a>
+
+</div></div>
+
+</body>
+</html>
