@@ -1,6 +1,3 @@
-/**
- * Created by Manohar on 25-Oct-16.
- */
 function preProcessData() {
     var topTerms = new Hashtable();
     var allTerms = new Hashtable();
